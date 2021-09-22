@@ -6,6 +6,7 @@ import edu.brown.cs.student.client.ClientRequestGenerator;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.net.URISyntaxException;
 import java.util.StringTokenizer;
 
 /**
@@ -71,7 +72,7 @@ public class Repl {
             System.out.println("ERROR: Unrecognized command.");
           }
         }
-      } catch (IOException e) { // some kind of read error, so the repl exits
+      } catch (IOException | URISyntaxException e) { // some kind of read error, so the repl exits
         System.out.println("ERROR: Failed parsing input.");
         break;
       }
